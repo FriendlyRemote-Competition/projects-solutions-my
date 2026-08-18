@@ -1,0 +1,72 @@
+/*CSS RESET*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*PUT YOUR CSS CODE HERE*/
+*{
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+main{
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+div{
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	border-radius: 50%;
+	position: absolute;
+	transition: .2s ease-in-out;
+	transform-origin: 50% 50%;
+}
+.div1{
+	animation:anim 5s ease-in-out infinite alternate;
+}
+.div2{
+	animation:reverse-anim 5s ease-in-out infinite alternate;
+}
+#one{
+	top: 0;
+	left: 50%;
+	translate: -50% 0;
+	border-radius: 50% 50% 50% 0;
+}
+#two{
+	top: 50%;
+	right: 0;
+	translate: 0 -50%;
+}
+#three{
+	bottom: 0;
+	left: 50%;
+	translate: -50% 0;
+}
+#four{
+	left: 0;
+	top: 50%;
+	translate: 0 -50%;
+}
+@keyframes anim{
+	0%{border-radius:50% 50% 50% 50%;transform:rotate(0);background-color: #EF9C76;}
+	25%{border-radius: 50% 50% 50% 0;transform:rotate(-45deg);background-color: #FB8C7F }
+	50%{border-radius:50% 50% 0 0;transform:rotate(-180deg);background-color: #D7675A}
+	75%{border-radius:50% 0 0 0;transform: rotate(-225deg);background-color: #EF9C76}
+	100%{border-radius:0 0 0 0;transform:rotate(-405deg);background-color: #639599 }
+}
+@keyframes reverse-anim{
+	0%{border-radius:50% 50% 50% 50%;transform:rotate(225deg);background-color: #EF9C76;}
+	25%{border-radius: 50% 50% 50% 0;transform:rotate(135deg);background-color: #FB8C7F }
+	50%{border-radius:50% 50% 0 0;transform:rotate(0);background-color: #D7675A}
+	75%{border-radius:50% 0 0 0;transform: rotate(-45deg);background-color: #EF9C76}
+	100%{border-radius:0 0 0 0;transform:rotate(-135deg);background-color: #639599 }
+}

@@ -1,0 +1,5 @@
+email,password,name,role,is_active
+admin1@hpferry.cn,admin123,Zhu Hai,admin,1
+admin2@hpferry.cn,admin123,Ivana Kral,admin,1
+dispatch1@hpferry.cn,dispatch123,Mo Chen,dispatcher,1
+dispatch2@hpferry.cn,dispatch123,Lars Holm,dispatcher,0

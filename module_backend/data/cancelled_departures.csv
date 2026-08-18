@@ -1,0 +1,4 @@
+line_code,departure_date,departure_time,departure_station,reason,cancelled_at
+QF,2026-08-19,08:30,QCZ,Vessel maintenance,2026-08-18T06:10:00+08:00
+TD,2026-08-19,09:00,DJD,Vessel swap at Tangqiao,2026-08-18T07:40:00+08:00
+TD,2026-08-20,14:00,DJD,Vessel maintenance,2026-08-15T14:00:00+08:00

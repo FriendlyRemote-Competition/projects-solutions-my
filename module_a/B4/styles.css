@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #10749D;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 350px;
+    background-color: white;
+}
+.tabs{
+    display: flex;
+}
+.tabs button{
+    flex-grow:1;
+    cursor: pointer;
+    padding: 25px 30px;
+    font-weight: bold;
+    border: none;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: #D3D8E7;
+    color: #4A0D66;
+    transition: .2s ease-in-out;
+}
+.tabs button.active{
+    background-color: white;
+}
+.title{
+    color: #4A0D66;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.content{
+    color:#969499;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+section{
+    padding: 30px;
+}
+.learn-btn{
+    padding: 10px 20px;
+    background-color: #37314c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s ease-in-out;
+}
+.learn-btn:hover{
+    transform: translateY(-5px);
+}

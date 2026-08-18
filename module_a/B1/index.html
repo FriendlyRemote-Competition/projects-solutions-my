@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Selector</title>
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="gradient-area">
+            <div class="color-control left-control">
+                <div class="color-grid" id="startColors">
+
+                </div>
+                <input
+                    type="text"
+                    id="startColor"
+                    value="#ff0000"
+                    maxlength="7"
+                    aria-label="Starting color"
+                >
+            </div>
+
+            <div class="gradient-box" id="gradientBox"></div>
+
+            <div class="color-control right-control">
+                <div class="color-grid" id="endColors">
+
+                </div>
+                <input
+                    type="text"
+                    id="endColor"
+                    value="#0000ff"
+                    maxlength="7"
+                    aria-label="Ending color"
+                >
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+    {
+        "first name": "Parker",
+        "last name": "Seokgil",
+        "age": 19,
+        "country": "Korea",
+        "gender": "male"
+    },
+    {
+        "first name": "JudeLow",
+        "last name": "Harris",
+        "age": 27,
+        "country": "United States",
+        "gender": "male"
+    },
+    {
+        "first name": "Maci",
+        "last name": "Farrell",
+        "age": 23,
+        "country": "France",
+        "gender": "female"
+    },
+    {
+        "first name": "",
+        "last name": "",
+        "age": "",
+        "country": "",
+        "gender": ""
+    }
+]

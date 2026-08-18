@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A4</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color:black;
+        }
+        main{
+            width: 250px;
+            height: 150px;
+            display: flex;
+            gap:10px;
+            justify-content: space-between;
+        }
+        .bar{
+            background-color: lawngreen;
+            width: 40px;
+            transform-origin: 50% 100%;
+            transform: scaleY(10%);
+            animation: rand 1s linear infinite;
+        }
+        .bar:nth-child(2){animation-delay: .2s}
+        .bar:nth-child(3){animation-delay: .4s}
+        .bar:nth-child(4){animation-delay: .6s}
+        .bar:nth-child(5){animation-delay: .8s}
+
+        @keyframes rand{
+            0%{transform: scaleY(10%);}
+            10%{transform: scaleY(20%);}
+            20%{transform: scaleY(90%);}
+            30%{transform: scaleY(30%);}
+            40%{transform: scaleY(100%);}
+            50%{transform: scaleY(50%);}
+            60%{transform: scaleY(25%);}
+            70%{transform: scaleY(60%);}
+            80%{transform: scaleY(85%);}
+            90%{transform: scaleY(15%);}
+            100%{transform: scaleY(10%);}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </main>
+</body>
+</html>
