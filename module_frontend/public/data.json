@@ -1,0 +1,770 @@
+{
+  "book": {
+    "title": "Foundations of Web Development",
+    "subtitle": "A Practical Introduction for Front-End Developers",
+    "author": "Editorial Team",
+    "edition": "2nd edition",
+    "language": "en",
+    "coverImage": "assets/images/cover.webp",
+    "coverImageAlt": "An open laptop showing code, used as the textbook cover image",
+    "description": "A twelve-chapter introductory course covering how the web works, HTML and CSS, visual design, JavaScript, the DOM, data and APIs, single page applications, browser storage, accessibility, performance and deployment. Written for students taking their first structured route into front-end development."
+  },
+  "chapters": [
+    {
+      "id": "ch1",
+      "number": 1,
+      "title": "Introduction to the Internet and the Web",
+      "sections": [
+        {
+          "id": "ch1-s1",
+          "heading": "How the Internet Works",
+          "content": "The Internet is a global network that connects millions of computers, phones and servers so that they can exchange data. Every device on the network has an IP address, which works in the same way as a postal address: it tells the network where a message should be delivered. Information does not travel as one large block. It is split into small units called packets, each of which can follow a different route through routers and cables before the packets are reassembled at the destination. This behaviour is described by a family of protocols known as TCP/IP. TCP is responsible for reliable delivery and for putting packets back into the correct order, while IP is responsible for addressing and routing. Understanding this layered model helps a developer reason about latency, packet loss and the real cost of every network request an application makes.",
+          "image": "assets/images/network-cables.webp",
+          "imageAlt": "Network cables plugged into a patch panel in a data centre",
+          "keyTerms": [
+            "internet",
+            "protocol",
+            "TCP/IP",
+            "IP address",
+            "packet"
+          ]
+        },
+        {
+          "id": "ch1-s2",
+          "heading": "The World Wide Web",
+          "content": "The World Wide Web is a system of interlinked documents and applications that is delivered over the Internet. It was proposed by Tim Berners-Lee in 1989 at CERN and made public in 1991. The Web is built on three ideas: a way to address a resource (the URL), a way to request it (the HTTP protocol) and a way to describe it (the HTML markup language). The Internet and the Web are not the same thing. The Internet is the physical and logical network; the Web is one of many services that run on top of it, alongside email, file transfer and video streaming. Hypertext is the feature that made the Web successful: any document can link to any other document, which turns isolated pages into a navigable structure of information.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "WWW",
+            "hypertext",
+            "browser",
+            "URL",
+            "CERN"
+          ]
+        },
+        {
+          "id": "ch1-s3",
+          "heading": "Clients, Servers and HTTP",
+          "content": "Most web communication follows a client-server model. The client, usually a browser, sends a request; the server processes it and returns a response. The conversation is governed by HTTP. A request carries a method such as GET, POST, PUT or DELETE, a path, a set of headers and sometimes a body. A response carries a status code, headers and the requested content. Status codes are grouped by meaning: 200 signals success, 301 and 302 signal redirection, 404 signals that the resource was not found and 500 signals a server error. HTTPS is the same protocol wrapped in TLS encryption, which protects the content from being read or modified in transit. HTTP is stateless: the server does not remember previous requests unless the application deliberately stores state using cookies, tokens or browser storage.",
+          "image": "assets/images/server-room.webp",
+          "imageAlt": "Rows of network racks in a modern server room",
+          "keyTerms": [
+            "HTTP",
+            "client",
+            "server",
+            "status code",
+            "HTTPS"
+          ]
+        },
+        {
+          "id": "ch1-s4",
+          "heading": "Domain Names, DNS and Hosting",
+          "content": "People remember names, not numbers. The Domain Name System translates a human-readable domain such as example.ae into the IP address of the machine that serves it. When a domain is typed into the address bar, the browser asks a resolver, the resolver asks a chain of name servers, and the answer is cached for a period defined by the TTL value. Hosting is the service that keeps the files and the application running on a machine that is permanently connected to the Internet. Shared hosting, virtual private servers, container platforms and static hosting on a content delivery network all solve the same problem with different trade-offs in cost, control and speed. A content delivery network stores copies of files close to the user, which reduces the distance every request has to travel.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "DNS",
+            "domain",
+            "hosting",
+            "CDN",
+            "cache"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "number": 2,
+      "title": "HTML: Structuring a Web Page",
+      "sections": [
+        {
+          "id": "ch2-s1",
+          "heading": "What is HTML",
+          "content": "HTML, the HyperText Markup Language, describes the structure of a web page. A document is built from elements, and an element is normally written as an opening tag, some content and a closing tag. Elements can carry attributes that add information, such as the address of a link or the source of an image. Every modern document starts with a doctype declaration, followed by the html element containing a head and a body. The head holds metadata that is not displayed: the character encoding, the title shown in the browser tab, the viewport declaration and links to stylesheets. The body holds everything the user sees. HTML is not a programming language and has no logic of its own, but the quality of the markup determines how easily the page can be styled, scripted, indexed by search engines and read by assistive technology.",
+          "image": "assets/images/html-code.webp",
+          "imageAlt": "Close-up of HTML source code displayed on a monitor",
+          "keyTerms": [
+            "HTML",
+            "tag",
+            "element",
+            "attribute",
+            "doctype"
+          ]
+        },
+        {
+          "id": "ch2-s2",
+          "heading": "Semantic Markup",
+          "content": "Semantic elements describe the meaning of content rather than its appearance. Using header, nav, main, article, section, aside and footer tells the browser, search engines and screen readers what each region of the page is for. A screen reader user can jump straight to the main landmark or list all headings on the page, but only if those landmarks and headings actually exist in the markup. Headings must follow a logical order from h1 downwards and must not be chosen because of their default font size. A div is not wrong, but it carries no meaning, so a page built entirely from div elements gives assistive technology nothing to work with. Semantic markup also produces cleaner stylesheets, because the structure itself provides useful selectors and reduces the need for extra class names.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "semantics",
+            "landmark",
+            "accessibility",
+            "SEO",
+            "heading"
+          ]
+        },
+        {
+          "id": "ch2-s3",
+          "heading": "Text, Links and Media",
+          "content": "Text content is marked up with paragraphs, lists, quotations, emphasis and strong importance. Links are created with the anchor element and an href attribute; the text inside the link must describe the destination, because a list of links that all say click here is useless out of context. Images use the img element with src and alt attributes. The alt attribute carries the meaning of the image for people who cannot see it, and it should be left empty for images that are purely decorative. The picture element and the srcset attribute allow the browser to choose an appropriate image for the screen size and pixel density, which saves bandwidth on mobile devices. Audio and video elements provide native playback, and captions or transcripts should always accompany recorded speech.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "anchor",
+            "href",
+            "alt",
+            "srcset",
+            "media"
+          ]
+        },
+        {
+          "id": "ch2-s4",
+          "heading": "Forms and User Input",
+          "content": "Forms are the main way users send data to an application. The form element groups a set of controls such as input, select, textarea and button. Every control needs an associated label, connected either by wrapping the control or by matching the for attribute to the control id. Input types such as email, number, date, search and tel give mobile users a suitable keyboard and enable built-in validation. Attributes such as required, min, max and pattern let the browser validate values before anything is sent, but client-side validation is a convenience, never a security measure; the server must validate again. Error messages should be specific, placed next to the field they describe and announced to assistive technology so that keyboard and screen reader users receive the same feedback as everyone else.",
+          "image": "assets/images/form-laptop.webp",
+          "imageAlt": "A person filling in a web form on a laptop",
+          "keyTerms": [
+            "form",
+            "input",
+            "label",
+            "validation",
+            "feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "number": 3,
+      "title": "CSS: Styling and Layout",
+      "sections": [
+        {
+          "id": "ch3-s1",
+          "heading": "Basics of Cascading Style Sheets",
+          "content": "CSS controls the visual presentation of an HTML document: colour, typography, spacing, borders, backgrounds and layout. A rule is made of a selector and a block of declarations, each declaration being a property and a value. The word cascading describes how conflicts are resolved. When several rules target the same element, the browser considers origin, specificity and source order to decide which declaration wins. Specificity is calculated from the selector: an id counts more than a class, and a class counts more than an element name. Inheritance means that some properties, such as colour and font family, pass from a parent element to its children, which is why setting typography once on the body element affects the whole document. Understanding the cascade prevents the habit of adding the important flag to force a result.",
+          "image": "assets/images/css-code.webp",
+          "imageAlt": "Colourful CSS code on a dark editor screen",
+          "keyTerms": [
+            "CSS",
+            "selector",
+            "cascade",
+            "specificity",
+            "inheritance"
+          ]
+        },
+        {
+          "id": "ch3-s2",
+          "heading": "The Box Model and Spacing",
+          "content": "Every element rendered by the browser is a rectangular box made of four layers: the content area, the padding around it, the border and the margin outside the border. By default the width property applies to the content area only, so padding and border are added on top, which produces boxes that are wider than expected. Setting box-sizing to border-box makes the declared width include padding and border and is the reason most projects begin with a small reset. Margins between two vertically adjacent elements collapse into a single margin equal to the larger of the two, a behaviour that surprises many beginners. Consistent spacing is one of the strongest signals of a professional interface, and a spacing scale based on a single base unit is far easier to maintain than arbitrary pixel values.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "box model",
+            "padding",
+            "margin",
+            "border-box",
+            "spacing"
+          ]
+        },
+        {
+          "id": "ch3-s3",
+          "heading": "Flexbox and Grid",
+          "content": "Flexbox arranges items along a single axis and is the natural tool for toolbars, navigation bars, card footers and any row of controls that must align and distribute space. The container defines the direction, the alignment and the gap, while each item can grow, shrink or keep a fixed basis. CSS Grid works in two dimensions at once and is the natural tool for page layouts, dashboards and galleries. A grid container declares columns and rows, and items can be placed by line number or by named area, which makes complex layouts readable in the stylesheet. The two systems are complementary rather than competing: a typical application uses Grid for the overall page skeleton, such as a sidebar next to a reading area, and Flexbox for the components inside it.",
+          "image": "assets/images/layout-grid-sketch.webp",
+          "imageAlt": "Layout sketches showing a grid of interface blocks on paper",
+          "keyTerms": [
+            "flexbox",
+            "grid",
+            "gap",
+            "alignment",
+            "layout"
+          ]
+        },
+        {
+          "id": "ch3-s4",
+          "heading": "Responsive Layout and Media Queries",
+          "content": "Responsive design allows one document to work on a small phone, a tablet and a large desktop monitor. It rests on three techniques: flexible grids that use relative units instead of fixed pixels, flexible media that never overflows its container, and media queries that apply different rules at defined breakpoints. A mobile-first stylesheet describes the small screen first and then adds complexity as space becomes available, which usually produces less code than the reverse. Breakpoints should be chosen where the design actually breaks rather than copied from a list of device names. Modern layouts can often adapt without any media query at all by using minmax, auto-fit and clamp. Whatever the technique, the interface must stay usable at every width: controls must not overlap, be clipped or force horizontal scrolling.",
+          "image": "assets/images/responsive-devices.webp",
+          "imageAlt": "The same website shown on a phone, a tablet and a laptop",
+          "keyTerms": [
+            "responsiveness",
+            "media query",
+            "breakpoint",
+            "mobile-first",
+            "clamp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "number": 4,
+      "title": "Typography, Colour and Visual Design",
+      "sections": [
+        {
+          "id": "ch4-s1",
+          "heading": "Readable Typography",
+          "content": "Typography carries most of the meaning in a reading application, so it deserves more attention than any other visual decision. Body text is comfortable between sixteen and twenty pixels, and a line length of roughly sixty to seventy-five characters keeps the eye from losing its place. Line height should grow as the line gets longer; a value between 1.5 and 1.7 suits continuous prose. A clear type scale, where each step is a fixed ratio of the previous one, gives headings an obvious hierarchy without guesswork. Limiting the project to one or two families, and to the weights actually used, keeps pages fast as well as tidy. In a digital textbook the reader should be able to adjust the size, the spacing and the width of the text column, because comfortable reading is personal.",
+          "image": "assets/images/typography.webp",
+          "imageAlt": "Printed type specimens showing different font weights and sizes",
+          "keyTerms": [
+            "typography",
+            "line height",
+            "type scale",
+            "measure",
+            "legibility"
+          ]
+        },
+        {
+          "id": "ch4-s2",
+          "heading": "Colour, Contrast and Themes",
+          "content": "Colour communicates hierarchy, state and brand, but it must never be the only way information is expressed, because colour blindness affects a significant part of the population. Contrast between text and background is measured as a ratio; the widely used target is 4.5 to 1 for normal text and 3 to 1 for large text and meaningful interface elements. A light theme and a dark theme are not simply inverted colours: a dark theme usually needs slightly desaturated surfaces, reduced pure white text and rebalanced shadows to avoid glare. Storing colours as custom properties allows an entire theme to be swapped by changing a single attribute on the root element. Whichever theme is active, focus indicators, selected states and error messages must remain clearly visible.",
+          "image": "assets/images/colour-palette.webp",
+          "imageAlt": "A designer comparing colour swatches from a palette",
+          "keyTerms": [
+            "contrast",
+            "theme",
+            "dark mode",
+            "colour blindness",
+            "WCAG"
+          ]
+        },
+        {
+          "id": "ch4-s3",
+          "heading": "Design Tokens and Custom Properties",
+          "content": "A design token is a named value that represents a single design decision, such as a brand colour, a spacing step, a border radius or a shadow. In CSS these tokens are expressed as custom properties declared on the root element and referenced everywhere else with the var function. Because custom properties are live values in the browser, changing one at runtime updates every rule that uses it, which is what makes theme switching and user-adjustable typography straightforward. Tokens should be named for their purpose rather than their appearance: a variable called surface-raised survives a redesign, whereas one called light-grey becomes a lie the moment the palette changes. A small, well-named token set is the difference between a stylesheet that scales and one that is rewritten every sprint.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "design token",
+            "custom property",
+            "var",
+            "theming",
+            "naming"
+          ]
+        },
+        {
+          "id": "ch4-s4",
+          "heading": "Visual Hierarchy and Interaction States",
+          "content": "Visual hierarchy is the order in which the eye discovers information, and it is created with size, weight, colour, spacing and position rather than with decoration. The most important element on a screen should be obvious within a second. Interaction states are part of the same system: every control needs a resting state, a hover state, a focus state, an active state and, where relevant, a disabled and a loading state. These states must be consistent across the whole application, so that a button behaves the same way wherever it appears. Feedback should be immediate and proportionate; a small confirmation is enough for a saved bookmark, while a destructive action such as resetting reading progress deserves a confirmation step and a clear description of what will be lost.",
+          "image": "assets/images/design-sketches.webp",
+          "imageAlt": "Interface sketches and notes spread across a desk",
+          "keyTerms": [
+            "hierarchy",
+            "hover",
+            "focus",
+            "state",
+            "feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "number": 5,
+      "title": "JavaScript Fundamentals",
+      "sections": [
+        {
+          "id": "ch5-s1",
+          "heading": "Introduction to JavaScript",
+          "content": "JavaScript is the programming language of the browser. It reacts to what the user does, changes the content of the page, talks to servers and stores data locally. The language was created in 1995 and is now standardised as ECMAScript, with a new edition published every year. Modern JavaScript also runs outside the browser, most commonly on Node.js, which is why the same language can power an interface and the tooling that builds it. Scripts are loaded with the script element and should normally carry the defer attribute so that parsing the document is not blocked. A browser runs JavaScript on a single thread with an event loop, which means that any long synchronous operation freezes the interface, and that expensive work must be broken up or moved elsewhere.",
+          "image": "assets/images/javascript-code.webp",
+          "imageAlt": "JavaScript source code open in a code editor",
+          "keyTerms": [
+            "JavaScript",
+            "ECMAScript",
+            "event loop",
+            "Node.js",
+            "defer"
+          ]
+        },
+        {
+          "id": "ch5-s2",
+          "heading": "Variables, Types and Operators",
+          "content": "Values in JavaScript belong to a small set of primitive types: string, number, boolean, null, undefined, symbol and bigint. Everything else, including arrays and functions, is an object. Variables are declared with const when the binding never changes and with let when it does; the older var keyword has confusing scoping rules and is avoided in new code. JavaScript converts types automatically in many expressions, which is convenient but produces surprises, so the strict equality operator should be preferred over the loose one. Template literals build strings from expressions without clumsy concatenation, and optional chaining together with the nullish coalescing operator makes it safe to read a value from data that may be incomplete, a common situation when rendering content loaded from a file.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "const",
+            "let",
+            "type",
+            "strict equality",
+            "template literal"
+          ]
+        },
+        {
+          "id": "ch5-s3",
+          "heading": "Functions, Scope and Modules",
+          "content": "A function groups a piece of behaviour behind a name so that it can be reused and tested. Functions can be declared, assigned to a variable, or written as arrow functions, which are shorter and do not bind their own this. Scope determines where a name is visible: variables declared with const and let live inside the nearest block. A closure is created when an inner function keeps access to the variables of the function that produced it, and closures are the reason a counter or a cache can keep private state. Modules split a project into files that declare exactly what they export and import, which removes global name clashes and makes dependencies explicit. Small functions with clear names and a single responsibility are far easier to debug than long ones.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "function",
+            "scope",
+            "closure",
+            "module",
+            "import"
+          ]
+        },
+        {
+          "id": "ch5-s4",
+          "heading": "Arrays, Objects and Iteration",
+          "content": "Most application logic is the transformation of collections. An array keeps an ordered list of values; an object keeps named properties. The methods map, filter, reduce, find, some and every express these transformations declaratively and return new values instead of mutating the original, which makes state changes easier to follow. Destructuring pulls values out of arrays and objects into named variables, and the spread syntax copies a structure while replacing selected fields. Because objects are compared by reference, copying is often necessary before a change, and a shallow copy is not enough when the structure is nested. Sorting requires a comparison function, and sorting strings that may contain non-English characters is done reliably with the localeCompare method.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "array",
+            "object",
+            "map",
+            "filter",
+            "destructuring"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "number": 6,
+      "title": "The DOM and Events",
+      "sections": [
+        {
+          "id": "ch6-s1",
+          "heading": "Working with the DOM",
+          "content": "The Document Object Model is a programming interface that represents an HTML document as a tree of nodes. Each element, attribute and piece of text is a node, and JavaScript can read or modify any of them while the page is running. The DOM is created by the browser from the markup, so a mistake in the HTML produces a tree that does not match expectations. Reading from the DOM and writing to it are both relatively slow operations compared with working on plain data, so an application should keep its own state in JavaScript and treat the DOM as the place where that state is displayed. Changing a large part of the tree is cheaper when the new nodes are built first and inserted once, for example through a document fragment.",
+          "image": "assets/images/dom-tree-screen.webp",
+          "imageAlt": "Browser developer tools showing the element tree of a page",
+          "keyTerms": [
+            "DOM",
+            "node",
+            "tree",
+            "document",
+            "fragment"
+          ]
+        },
+        {
+          "id": "ch6-s2",
+          "heading": "Selecting and Updating Elements",
+          "content": "Elements are found with querySelector for a single match and querySelectorAll for a list, both of which accept any CSS selector. Content is changed with textContent, which is safe because it never interprets markup, or with innerHTML, which does interpret markup and must therefore never receive text that came from a user or from an untrusted file. New elements are created with createElement, configured, and then appended to a parent. Classes are managed with the classList interface, which can add, remove and toggle a class without touching the others. Data attributes provide a clean way to attach an identifier to an element, so that a click on a chapter entry can be traced back to the record it represents without storing that link in a global variable.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "querySelector",
+            "textContent",
+            "innerHTML",
+            "classList",
+            "dataset"
+          ]
+        },
+        {
+          "id": "ch6-s3",
+          "heading": "Events and Delegation",
+          "content": "An event is a signal that something happened: a click, a key press, a change in a field, a scroll, or the completion of a load. A listener is attached with addEventListener and receives an event object describing what occurred and which element was involved. Events travel down the tree in a capture phase and back up in a bubbling phase, and this bubbling makes delegation possible: instead of attaching a listener to every item in a long list, one listener on the container inspects the target and acts accordingly. Delegation keeps memory use low and continues to work for items added later. Keyboard events deserve equal attention to pointer events, because an interface that only responds to a mouse excludes a large group of users.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "event",
+            "listener",
+            "bubbling",
+            "delegation",
+            "keyboard"
+          ]
+        },
+        {
+          "id": "ch6-s4",
+          "heading": "Rendering Lists from Data",
+          "content": "A data-driven interface generates its markup from a structure rather than hard-coding it. The pattern is always the same: hold the data in memory, derive the view from that data, and re-render the affected part when the data changes. A render function that receives a list and returns markup is easy to reason about and easy to reuse for a table of contents, a search result list and a bookmark panel alike. Every generated item should carry a stable identifier so that the code can map a user action back to the correct record. Empty results are part of the design, not an afterthought: a list with nothing in it must show a clear message explaining what happened and what the reader can do next.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "render",
+            "template",
+            "identifier",
+            "empty state",
+            "data-driven"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "number": 7,
+      "title": "Working with Data and APIs",
+      "sections": [
+        {
+          "id": "ch7-s1",
+          "heading": "JSON: the Data Format of the Web",
+          "content": "JSON, or JavaScript Object Notation, is a lightweight text format for structured data. It supports objects, arrays, strings, numbers, booleans and null, and nothing else: no comments, no trailing commas and no functions. Keys must be quoted with double quotes. The format is easy to read, easy to generate in any language and small enough to travel quickly over a network, which is why it replaced XML for most web APIs. In the browser, JSON.parse turns a text response into live objects and JSON.stringify turns objects back into text for storage or transmission. Because parsing fails on malformed input, any code that reads an external file should handle that failure and show a useful message instead of leaving the interface in a broken half-loaded state.",
+          "image": "assets/images/json-data.webp",
+          "imageAlt": "A JSON data file displayed in a text editor",
+          "keyTerms": [
+            "JSON",
+            "parse",
+            "stringify",
+            "data format",
+            "schema"
+          ]
+        },
+        {
+          "id": "ch7-s2",
+          "heading": "Fetch, Promises and async/await",
+          "content": "The fetch function requests a resource over the network and returns a promise, an object that represents a value that is not available yet. A promise is pending, then either fulfilled or rejected, and handlers attached to it run when that happens. The async and await keywords let the same logic be written in a linear style that reads like synchronous code while remaining non-blocking. Two points are commonly missed. First, fetch only rejects on a network failure, so the ok property or the status must be checked explicitly for responses such as 404. Second, reading the body is itself asynchronous, which is why the call to the json method is awaited as well. Errors belong in a try and catch block so the interface can recover.",
+          "image": "assets/images/api-network-tab.webp",
+          "imageAlt": "The network panel of browser developer tools listing requests",
+          "keyTerms": [
+            "fetch",
+            "promise",
+            "async",
+            "await",
+            "error handling"
+          ]
+        },
+        {
+          "id": "ch7-s3",
+          "heading": "Loading States and Failure",
+          "content": "Any operation that takes time needs three visible outcomes: loading, success and failure. A reader who sees nothing after selecting a chapter cannot tell whether the application is working or broken. A skeleton placeholder or a small progress indicator answers that question immediately, and it should appear only after a short delay so that fast responses do not produce a distracting flash. Failure states must explain the problem in plain language and offer a way forward, usually a retry action. Silent failures are the worst outcome of all, because the user is left with an interface that looks complete but contains nothing. Robust applications also survive missing pieces: a missing image should fall back to a placeholder, and a request for an unknown identifier should show a not found view rather than crashing.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "loading state",
+            "skeleton",
+            "retry",
+            "fallback",
+            "resilience"
+          ]
+        },
+        {
+          "id": "ch7-s4",
+          "heading": "Searching, Filtering and Highlighting",
+          "content": "Search is the fastest way to move through a long document, and a good implementation is more than a call to includes. The query and the source text should be normalised to the same case, and surrounding spaces should be trimmed, so that a careless query still matches. Searching should cover both headings and body text, and each result should show the chapter and section it came from together with a short excerpt around the match, so the reader can judge relevance before navigating. Highlighting the matched term in the excerpt and again in the destination section confirms why the result was returned. Because a search may run on every keystroke, the handler is usually debounced by a short delay, and the case of no matches must produce a clear message rather than an empty screen.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "search",
+            "filter",
+            "excerpt",
+            "highlight",
+            "debounce"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "number": 8,
+      "title": "Single Page Applications",
+      "sections": [
+        {
+          "id": "ch8-s1",
+          "heading": "What is an SPA",
+          "content": "A Single Page Application loads one HTML document and then updates its content dynamically as the user interacts with it, without a full page reload. The browser keeps the application in memory, so navigation feels instant and the state of the interface, such as the current scroll position or an open panel, survives between views. The cost of this model is that the application takes on responsibilities the browser used to handle: routing, focus management, the meaning of the back button and the initial download size. An SPA is a good fit for tools that a person uses for a long session, such as a reading application, a dashboard or an editor. It is a poor fit for content that must be indexed instantly and read once, unless the pages are also rendered on the server.",
+          "image": "assets/images/spa-app-screens.webp",
+          "imageAlt": "A web application interface shown on a laptop screen",
+          "keyTerms": [
+            "SPA",
+            "routing",
+            "state",
+            "reload",
+            "navigation"
+          ]
+        },
+        {
+          "id": "ch8-s2",
+          "heading": "Client-side Routing",
+          "content": "A router maps a location to a view. In the browser this is done either with the hash portion of the address or with the History API, whose pushState method changes the address bar without contacting the server. Each view of the application should have its own address so that a chapter can be shared, bookmarked in the browser and restored after a refresh. Listening for the popstate event keeps the back and forward buttons working, which users expect even inside an application. A router must also handle an unknown address by showing a not found view instead of failing, and it should move keyboard focus to the heading of the new view, because a reader using a screen reader is otherwise given no indication that anything has changed.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "router",
+            "History API",
+            "pushState",
+            "popstate",
+            "not found"
+          ]
+        },
+        {
+          "id": "ch8-s3",
+          "heading": "State Management",
+          "content": "State is everything the application needs to remember: which section is open, what the reader searched for, which bookmarks exist, which theme is active and how much has been read. The most common source of bugs in an interface is state that is stored in two places and allowed to drift apart. A single source of truth solves this: keep one object that describes the application, change it only through a small number of functions, and re-render the affected views from it. State should be separated into what must survive a restart, such as bookmarks and preferences, and what should not, such as the current search query. Persisted state must also be validated when it is read back, because the stored data may come from an older version of the application.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "state",
+            "single source of truth",
+            "immutability",
+            "persistence",
+            "validation"
+          ]
+        },
+        {
+          "id": "ch8-s4",
+          "heading": "Components and Reusable Interfaces",
+          "content": "A component is a self-contained piece of interface that owns its markup, its styling and its behaviour, and that can be used in more than one place. Whether the project uses a framework or plain JavaScript modules, the principle is the same: a component receives data, produces a view and communicates outwards through events or callbacks rather than reaching into the rest of the application. Good boundaries make an application easier to change; a bookmark button should not know how the table of contents is drawn. Duplication is the warning sign to watch for. When the same block of markup or the same handler appears three times with small differences, it should become one component with parameters, which reduces the code to maintain and guarantees consistent behaviour.",
+          "image": "assets/images/components-workspace.webp",
+          "imageAlt": "A developer working on interface components at a desk",
+          "keyTerms": [
+            "component",
+            "reusability",
+            "props",
+            "composition",
+            "separation of concerns"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch9",
+      "number": 9,
+      "title": "Storage, Persistence and Offline Use",
+      "sections": [
+        {
+          "id": "ch9-s1",
+          "heading": "Browser Storage Options",
+          "content": "The browser offers several places to keep data on the reader's own device. localStorage holds string values that survive closing the tab and the browser itself, and it is the simplest choice for preferences, bookmarks and progress. sessionStorage behaves in the same way but is cleared when the tab closes, which suits temporary state such as a draft query. Cookies are sent with every request to the server and are therefore reserved for data the server needs, not for interface settings. IndexedDB is a full database in the browser and is worth the extra complexity only for large or structured collections. All of these are limited in size, are specific to one origin and can be cleared by the user at any time, so an application must work correctly when it finds nothing stored.",
+          "image": "assets/images/browser-storage.webp",
+          "imageAlt": "Developer tools open on the browser storage panel",
+          "keyTerms": [
+            "localStorage",
+            "sessionStorage",
+            "cookie",
+            "IndexedDB",
+            "origin"
+          ]
+        },
+        {
+          "id": "ch9-s2",
+          "heading": "Saving Preferences Safely",
+          "content": "Because localStorage only stores text, structured values are written with JSON.stringify and read back with JSON.parse. Every read should be wrapped in a try and catch block: the stored text may be corrupt, may have been written by an older version of the application, or may be unavailable altogether when storage is disabled or full. A sensible pattern is to read once at start-up, validate the result against expected values, fall back to defaults when validation fails, and then keep the value in application state rather than reading from storage repeatedly. Keys should be namespaced with a short prefix so that two applications on the same origin do not overwrite each other. Preferences such as font size, theme and line spacing should be applied before the first paint to avoid a visible flash of the wrong theme.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "stringify",
+            "namespace",
+            "defaults",
+            "preferences",
+            "flash"
+          ]
+        },
+        {
+          "id": "ch9-s3",
+          "heading": "Tracking Reading Progress",
+          "content": "Progress tracking turns a document into a course. The simplest reliable measure is the proportion of sections a reader has visited, calculated per chapter and for the book as a whole, and shown as a percentage or a progress bar. A section can be counted as read when it has been opened, or more strictly when the reader has scrolled to its end, which the Intersection Observer interface can detect without expensive scroll handlers. Completed items should be marked visually in the table of contents so that progress is visible where the reader navigates, not only on a summary screen. Progress belongs in the same persisted state as bookmarks and settings, and the reader must be able to reset it deliberately, with a confirmation step, because the action cannot be undone.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "progress",
+            "percentage",
+            "Intersection Observer",
+            "completion",
+            "reset"
+          ]
+        },
+        {
+          "id": "ch9-s4",
+          "heading": "Caching and Working Offline",
+          "content": "A service worker is a script that runs beside the page and can intercept network requests, which makes it possible for an application to open without a connection. A common strategy serves the application shell from a cache immediately and updates it in the background, while content is fetched from the network and stored for later. Caching introduces its own problem: a stale copy that never updates. Versioning the cache name and removing old versions during activation keeps the copy fresh. Offline support should be honest with the reader; an interface that hides the fact that data is old is worse than one that shows when it was last updated. For a study application, offline reading of already visited chapters is often the single most valued feature.",
+          "image": "assets/images/offline-mobile.webp",
+          "imageAlt": "A person reading on a phone away from a desk",
+          "keyTerms": [
+            "service worker",
+            "cache",
+            "offline",
+            "versioning",
+            "application shell"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Accessibility and Inclusive Design",
+      "sections": [
+        {
+          "id": "ch10-s1",
+          "heading": "Accessibility and Usability",
+          "content": "Building an accessible interface means that the application can be used by as wide a range of people as possible, including people who are blind or have low vision, people who cannot use a mouse, people who are deaf or hard of hearing and people with cognitive differences. The Web Content Accessibility Guidelines organise this work under four principles: content must be perceivable, operable, understandable and robust. Level AA is the level most public bodies require. Accessibility overlaps heavily with plain good design, because captions, clear labels, sufficient contrast and predictable navigation help everyone, particularly on a small screen or in bright sunlight. The most effective habit is to build with semantic HTML from the start; most accessibility problems are created by rebuilding native controls out of unlabelled generic elements.",
+          "image": "assets/images/accessibility.webp",
+          "imageAlt": "A person using assistive technology to work at a computer",
+          "keyTerms": [
+            "accessibility",
+            "a11y",
+            "WCAG",
+            "inclusive design",
+            "usability"
+          ]
+        },
+        {
+          "id": "ch10-s2",
+          "heading": "Keyboard Navigation and Focus",
+          "content": "Every action that can be performed with a pointer must also be reachable with a keyboard. The Tab key moves focus forward, Shift and Tab move it back, Enter and Space activate controls and Escape closes overlays. The order of focus follows the order of the markup, which is one more reason for the markup to reflect the visual structure. A visible focus indicator is essential; removing the outline without providing a stronger replacement makes an application unusable for keyboard users. Dialogs must trap focus while they are open and return it to the control that opened them when they close. A skip link at the top of the page allows a reader to jump past a long table of contents straight to the chapter text instead of tabbing through every entry.",
+          "image": "assets/images/keyboard-hands.webp",
+          "imageAlt": "Hands typing on a keyboard in front of a monitor",
+          "keyTerms": [
+            "keyboard",
+            "focus",
+            "tab order",
+            "focus trap",
+            "skip link"
+          ]
+        },
+        {
+          "id": "ch10-s3",
+          "heading": "ARIA Roles and Live Regions",
+          "content": "ARIA attributes add information for assistive technology when native HTML cannot express it. The first rule of ARIA is not to use ARIA: a button element is always better than a div with a button role. Where custom widgets are unavoidable, roles describe what a component is, states such as aria-expanded and aria-selected describe what it is doing, and aria-label or aria-labelledby give it an accessible name. A live region announces changes that happen away from the point of focus, which is exactly what a search result count or a saved confirmation needs. Polite announcements wait for a pause in speech, while assertive ones interrupt and should be reserved for errors. Incorrect ARIA is more harmful than none, because it describes a component that does not behave as promised.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "ARIA",
+            "role",
+            "aria-label",
+            "live region",
+            "announcement"
+          ]
+        },
+        {
+          "id": "ch10-s4",
+          "heading": "Testing for Accessibility",
+          "content": "Accessibility is verified, not assumed. Automated tools such as the accessibility panel in browser developer tools and the axe engine catch missing names, low contrast and invalid attributes in seconds, but they detect only part of the problem. Manual checks fill the gap: unplug the mouse and complete a full task with the keyboard alone, zoom the page to two hundred per cent, switch to the dark theme and inspect contrast again, and listen to a screen reader read a page from top to bottom. Checking the heading outline reveals whether the document structure makes sense out of context. Doing these checks continuously during development costs minutes, while retro-fitting accessibility into a finished application usually means rebuilding components that were never structured for it.",
+          "image": "assets/images/screen-reader-testing.webp",
+          "imageAlt": "Two developers reviewing an interface together on screen",
+          "keyTerms": [
+            "testing",
+            "axe",
+            "screen reader",
+            "zoom",
+            "audit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Performance and Optimisation",
+      "sections": [
+        {
+          "id": "ch11-s1",
+          "heading": "Why Performance Matters",
+          "content": "Speed is a feature. Readers abandon interfaces that hesitate, and the effect is strongest on mobile devices and slow connections, which is the majority of the world. Performance is measured with user-centred metrics rather than raw load time: Largest Contentful Paint describes when the main content becomes visible, Cumulative Layout Shift describes how much the page moves while it settles, and Interaction to Next Paint describes how quickly the interface responds to input. Layout shift is a common and easily avoided fault, caused by images without declared dimensions or by content injected above existing content. Setting a performance budget at the start of a project, such as a maximum weight for scripts, turns speed into a design constraint instead of an optimisation attempted after everything else is finished.",
+          "image": "assets/images/performance-dashboard.webp",
+          "imageAlt": "A performance dashboard with charts on a monitor",
+          "keyTerms": [
+            "performance",
+            "LCP",
+            "layout shift",
+            "budget",
+            "metrics"
+          ]
+        },
+        {
+          "id": "ch11-s2",
+          "heading": "Images and Asset Optimisation",
+          "content": "Images are usually the heaviest part of a page, so they are the first place to look for savings. Modern formats such as WebP and AVIF are far smaller than JPEG at comparable quality, and photographs should be exported at the size they will actually be displayed rather than at full resolution. The srcset and sizes attributes let the browser choose the right file for the screen, and the loading attribute set to lazy defers images that are below the fold. Width and height attributes should always be present so the browser can reserve space and avoid layout shift. Fonts deserve the same discipline: subset them, load only the weights used, and set a display strategy so text remains readable while a font is still downloading.",
+          "image": "assets/images/image-optimisation.webp",
+          "imageAlt": "A photographer reviewing images on a laptop",
+          "keyTerms": [
+            "WebP",
+            "lazy loading",
+            "srcset",
+            "compression",
+            "fonts"
+          ]
+        },
+        {
+          "id": "ch11-s3",
+          "heading": "Rendering and Runtime Performance",
+          "content": "A slow interface is often the result of doing too much work in response to a single event. Reading a layout property and then writing a style repeatedly in a loop forces the browser to recalculate layout each time, a pattern known as layout thrashing. Batching reads and writes, or building nodes off-screen before inserting them once, avoids it. Handlers that fire continuously, such as scroll and resize, should be throttled, and input handlers should be debounced. Animating only transform and opacity keeps work on the compositor and away from layout. Where a list is very long, rendering only the visible rows keeps the node count low. The general rule is to keep the main thread free, because everything the reader perceives as responsiveness happens there.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "reflow",
+            "throttle",
+            "debounce",
+            "compositor",
+            "main thread"
+          ]
+        },
+        {
+          "id": "ch11-s4",
+          "heading": "Measuring with Developer Tools",
+          "content": "Optimisation without measurement is guesswork. Browser developer tools contain everything needed: the network panel shows the size and order of every request and can simulate a slow connection, the performance panel records a timeline of scripting, layout and painting, and the coverage panel reveals how much of the shipped code is never executed. Lighthouse produces a repeatable audit covering performance, accessibility and best practices, which is useful as a baseline before and after a change. Laboratory measurements should be checked against real conditions, because a developer machine on a fast connection is not representative. Profile first, change one thing, measure again; a change that cannot be shown to help is a change that only adds risk to the codebase.",
+          "image": "assets/images/devtools.webp",
+          "imageAlt": "Browser developer tools open beside a running web application",
+          "keyTerms": [
+            "developer tools",
+            "Lighthouse",
+            "profiling",
+            "audit",
+            "throttling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Tooling, Version Control and Deployment",
+      "sections": [
+        {
+          "id": "ch12-s1",
+          "heading": "Working with Developer Tools",
+          "content": "The browser is the primary development environment. The elements panel shows the live DOM and the styles applied to any node, and values can be edited in place to test an idea before it is written into a file. The console evaluates expressions, prints diagnostic output and reports errors with a stack trace that points to the line responsible. Breakpoints in the sources panel pause execution so that variables can be inspected at the moment a fault occurs, which is far more informative than scattering print statements through the code. Device emulation reproduces the reference widths of a project and simulates touch input. Learning these tools well shortens the distance between noticing a problem and understanding its cause, which is the largest part of debugging.",
+          "image": null,
+          "imageAlt": null,
+          "keyTerms": [
+            "console",
+            "breakpoint",
+            "inspector",
+            "debugging",
+            "emulation"
+          ]
+        },
+        {
+          "id": "ch12-s2",
+          "heading": "Version Control with Git",
+          "content": "Git records the history of a project as a series of commits, each a snapshot with a message explaining why the change was made. Working on a branch keeps an experiment separate from stable code until it is ready to be merged. Small, focused commits with clear messages make history useful; a single commit containing a day of unrelated work tells nobody anything. A remote repository on a hosting service provides a backup, a place to review changes and a base for collaboration. Even a competitor working alone benefits from version control, because it makes it possible to return to the last state that worked after an experiment fails. Files that should never be committed, such as dependency folders and local configuration, belong in a gitignore file.",
+          "image": "assets/images/git-version-control.webp",
+          "imageAlt": "A terminal window showing a version control history",
+          "keyTerms": [
+            "Git",
+            "commit",
+            "branch",
+            "merge",
+            "repository"
+          ]
+        },
+        {
+          "id": "ch12-s3",
+          "heading": "Package Managers and Build Tools",
+          "content": "A package manager such as npm installs libraries and records them in a manifest so that the same versions can be restored on another machine. The lock file pins exact versions and should be committed. A build tool takes the source of a project and produces files suited to a browser: modules are bundled, modern syntax is transpiled where needed, stylesheets are processed, and everything is minified. A development server adds instant reloading while work is in progress. The cost of tooling is complexity and dependency weight, so a small project may be better served by plain modules that the browser loads directly. Whichever route is chosen, the project must build and run with standard commands, because anyone else who opens it will try those first.",
+          "image": "assets/images/terminal-build.webp",
+          "imageAlt": "A terminal running a project build command",
+          "keyTerms": [
+            "npm",
+            "package",
+            "bundler",
+            "lock file",
+            "build"
+          ]
+        },
+        {
+          "id": "ch12-s4",
+          "heading": "Deploying a Web Application",
+          "content": "Deployment is the step that turns a working project into something other people can use. A static application needs only a host that serves files over HTTPS, and modern platforms will build from a repository automatically on every push. A single page application requires one extra rule on the server: any unknown path must return the main HTML document, otherwise refreshing a deep link produces a not found error. Cached assets should carry a hash in their file names so that a new release is picked up immediately while unchanged files stay cached. Before going live, check the application on a real device, confirm that it works from a cold cache, and verify that no development configuration, verbose logging or secret has been left in the published build.",
+          "image": "assets/images/deployment-cloud.webp",
+          "imageAlt": "Cloud infrastructure diagram displayed on a screen",
+          "keyTerms": [
+            "deployment",
+            "static hosting",
+            "fallback route",
+            "cache busting",
+            "release"
+          ]
+        }
+      ]
+    }
+  ]
+}
