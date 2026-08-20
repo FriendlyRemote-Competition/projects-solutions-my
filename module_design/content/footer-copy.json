@@ -1,0 +1,17 @@
+{
+  "address": "88 North Suzhou Road, Shanghai 200085, China",
+  "phone": "+86 21 6888 8800",
+  "email": "stay@thesuhotel.example",
+  "navigation": [
+    "Hotel",
+    "Rooms",
+    "Dining",
+    "Wellness",
+    "Shanghai"
+  ],
+  "social": [
+    "WeChat",
+    "Instagram",
+    "Little Red Book"
+  ]
+}

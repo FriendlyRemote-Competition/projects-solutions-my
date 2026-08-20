@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <title>The Su</title>
+</head>
+<body>
+    <header>
+        <img src="./brand/su-hotel-logo-light.svg" width="200" alt="">
+        <nav>
+            <a href="#hotel">HOTEL</a>
+            <a href="#rooms">ROOMS</a>
+            <a href="#dining">DINING</a>
+            <a href="#wellness">WELLNESS</a>
+            <a href="#shanghai">SHANGHAI</a>
+        </nav>
+        <div class="header-actions">
+            <button class="no-bg">EN</button>
+            <button class="no-bg outline">BOOK YOUR STAY</button>
+        </div>
+        <div class="mobile-icon">
+            <svg id="mobile-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M5 10h22M5 16h22M5 22h22" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+    </header>
+
+    <div id="mobile-menu" aria-expanded="false">
+        <button id="close-btn">
+            <img src="./icons/icon-close.svg" width="50" alt="">
+        </button>
+        <div class="mobile-nav">
+            <a class="mobile-link" href="#hotel">Hotel</a>
+            <a class="mobile-link" href="#rooms">Rooms</a>
+            <a class="mobile-link" href="#dining">Dining</a>
+            <a class="mobile-link" href="#wellness">Wellness</a>
+            <a class="mobile-link" href="#shanghai">Shanghai</a>
+        </div>
+        <button class="black">BOOK YOUR STAY</button>
+    </div>
+
+    <section class="hero" id="hero">
+        <picture>
+            <source srcset="./images/hero-shanghai-hotel-mobile.webp" media="(width <= 768px)">
+            <source src="./images/hero-shanghai-hotel.webp">
+            <img src="./images/hero-shanghai-hotel.jpg" alt="">
+        </picture>
+        <div class="overlay">
+            <div class="content">
+                <div>A QUIET ADDRESS IN A CITY OF MOVEMENT</div>
+                <h1>Stay close to the soul of<br> Shanghai</h1>
+                <div>
+                    River light, Art Deco restraint and intuitive hospitality meet beside<br>
+                    Suzhou Creek
+                </div>
+                <div class="actions">
+                    <button class="brass">BOOK YOUR STAY</button>
+                    <button class="no-bg">DISCOVER THE HOTEL</button>
+                </div>
+                <div class="scroll">
+                    <button class="no-bg">SCROLL</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="hotel">
+        <main>
+            <img src="./images/story-lobby.webp" alt="">
+
+        </main>
+    </section>
+
+    <section class="rooms" id="rooms">
+        <small>ROOMS & SUITES</small>
+        <div class="header">
+            <h1>A private view of Shanghai</h1>
+            <div class="desc">
+                Four considered spaces, each composed for rest,<br> conversation and the changing river light
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/room-deluxe-river.webp" alt="">
+            <div class="details">
+                <small class="counter">01 / 04</small>
+                <h1 class="name">Deluxe River Room</h1>
+                <div>
+                    A calm river-facing room shaped by the warm timber, cream linen and morning light.
+                </div>
+                <hr>
+                <div class="specs">
+                    <div class="spec">
+                        <small>SPACE</small>
+                        <div>42 m²</div>
+                    </div>
+                    <div class="spec">
+                        <small>GUESTS</small>
+                        <div>2</div>
+                    </div>
+                    <div class="spec">
+                        <small>BED</small>
+                        <div>1 king bed</div>
+                    </div>
+                </div>
+                <hr>
+                <h1>FROM CNY 2,380 / night</h1>
+                <div class="actions">
+                    <button class="no-bg">VIEW ROOM DETAILS</button>
+                    <button class="black">BOOK THIS ROOM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="restaurants" id="dining">
+        <small>DINING</small>
+        <div class="header">
+            <h1>Shanghai, served with clarity</h1>
+            <div class="desc">
+                Season-led cooking downstairs. River-facing cocktails upstairs
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="./images/dining-su-kitchen.webp" alt="">
+                <div class="overlay">
+                    <div class="content">
+                        <small>MODERN SHANGHAI TABLE</small>
+                        <h1>SU Kitchen</h1>
+                    </div>
+                    <button class="view-sample">VIEW SAMPLE MENU</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/dining-river-bar.webp" alt="">
+                <div class="overlay">
+                    <div class="content">
+                        <small>DRINKS AFTER DUSK</small>
+                        <h1>River Bar</h1>
+                    </div>
+                    <button class="view-sample">VIEW SAMPLE MENU</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wellness" id="wellness">
+        <div class="heading">
+            <img src="./images/wellness-pool.webp" alt="">
+            <div class="overlay">
+                <div class="content">
+                    <small>WELLNESS</small>
+                    <h1>A slower rhythm below <br> the city</h1>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="card">
+                <img src="./icons/icon-spa.svg" width="40" alt="">
+                <h1>Spa</h1>
+                <small>
+                    Restorative treatments grounded in scent, warmth and touch
+                </small>
+                <small>
+                    10:00-22:00
+                </small>
+            </div>
+            <div class="card">
+                <img src="./icons/icon-pool.svg" width="40"  alt="">
+                <h1>Indoor Pool</h1>
+                <small>
+                    A 20-metre pool with calm lighting and dedicated family hours.
+                </small>
+                <small>
+                    06:00-23:00
+                </small>
+            </div>
+            <div class="card">
+                <img src="./icons/icon-fitness.svg" width="40"  alt="">
+                <h1>Fitness Studio</h1>
+                <small>
+                    Natural light, thoughtful equipment and private sessions on request
+                </small>
+                <small>
+                    OPEN 24 HOURS
+                </small>
+            </div>
+            <div class="card">
+                <img src="./icons/icon-transfer.svg" width="40" alt="">
+                <h1>Private Transfers</h1>
+                <small>
+                    Quiet airport and station journeys arranged by your hotel host.
+                </small>
+                <small>
+                    BY RESERVATION
+                </small>
+            </div>
+        </main>
+    </section>
+
+    <section class="explore" id="shanghai">
+        <small>EXPLORE SHANGHAI</small>
+        <div class="header">
+            <h1>The city, within easy reach</h1>
+            <div class="desc">
+                Walk the creek, follow the galleries or arrive at the riverfront before the city fully wakes
+            </div>
+        </div>
+        <main>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-labelledby="title desc"><title id="title">Shanghai neighbourhood map</title><desc id="desc">Stylised map showing The Sù Hotel, the Bund, Suzhou Creek Walk and M50 Art District.</desc><rect width="900" height="640" fill="#E7E2D8"/><g fill="none" stroke="#C8C0B3" stroke-width="3" opacity=".8"><path d="M0 110 900 230M0 280 900 350M0 500 900 430M150 0 230 640M420 0 390 640M690 0 620 640"/><path d="m0 410 240-80 180 30 180-120 300 10"/></g><path d="M-30 160c190-90 280 70 425 20s225-170 540-70v95c-275-75-370 35-510 78S185 205-30 294Z" fill="#7898A0" opacity=".8"/><path d="M760-30c-50 180-5 390 170 540" fill="none" stroke="#7898A0" stroke-width="80" opacity=".8"/><g font-family="Arial,sans-serif" font-size="20" fill="#596064"><text x="80" y="88">M50</text><text x="400" y="315">SUZHOU CREEK</text><text x="735" y="390">THE BUND</text></g><g id="hotel-location"><circle  cx="492" cy="280" r="18" fill="#151719"/><circle  cx="492" cy="280" r="7" fill="#B28A52"/><text x="515" y="287" font-family="Arial,sans-serif" font-size="19" fill="#151719">THE SÙ HOTEL</text></g><g id="marker-m50" tabindex="0"><circle class="marker" id="third" cx="132" cy="112" r="18" fill="#F4F0E8" stroke="#B28A52" stroke-width="5"/><text x="126" y="119" font-family="Arial,sans-serif" font-size="18">3</text></g><g id="marker-suzhou-creek" tabindex="0"><circle class="marker" id="second" cx="410" cy="255" r="18" fill="#F4F0E8" stroke="#B28A52" stroke-width="5"/><text x="404" y="262" font-family="Arial,sans-serif" font-size="18">2</text></g><g id="marker-bund" tabindex="0"><circle class="marker" id="first" cx="738" cy="374" r="18" fill="#F4F0E8" stroke="#B28A52" stroke-width="5"/><text x="732" y="381" font-family="Arial,sans-serif" font-size="18">1</text></g></svg>
+
+            <div class="cards">
+                <div class="card explore-card" data-explore="first">
+                    <img src="./images/nearby-bund.webp" alt="">
+                    <div class="content">
+                        <small>01 - BY CAR 12 MIN</small>
+                        <h1>The Bund</h1>
+                        <small>Historic waterfront architecture and expansive Huangpu River views</small>
+                    </div>
+                </div>
+                <div class="card explore-card" data-explore="second">
+                    <img src="./images/nearby-suzhou-creek.webp" alt="">
+                    <div class="content">
+                        <small>02 - OM FOOT 4 MIN</small>
+                        <h1>Suzhou Creek Walk</h1>
+                        <small>A relaxed riverside route connecting restored warehouses and new public spaces</small>
+                    </div>
+                </div>
+                <div class="card explore-card" data-explore="third">
+                    <img src="./images/nearby-m50.webp" alt="">
+                    <div class="content">
+                        <small>03 - BY CAR 9 MIN</small>
+                        <h1>M50 Art District</h1>
+                        <small>Independent galleries and studios in a converted industrial neighbourhood</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section class="footer" id="footer">
+        <main>
+            <div>
+                <img src="./brand/su-hotel-logo-light.svg" width="200" alt="">
+                <div>
+                    88 North Suzhou Road,<br> Shanghai 200085, China
+                </div>
+                <div>
+                    <div>+86 21 6888 8800</div>
+                    <div>stay@thesuhotel.example</div>
+                </div>
+            </div>
+            <div>
+                <a href="">Home</a>
+                <a href="">Rooms</a>
+                <a href="">Dining</a>
+                <a href="">Wellness</a>
+                <a href="">Shanghai</a>
+            </div>
+            <div>
+                <small>LETTERS FROM SHANGHAI</small>
+                <h1>Stay close to the story</h1>
+                <div class="field">
+                    <small>Email address</small>
+                    <div class="input">
+                        <input type="email" id="email-input" placeholder="you@example.com">
+                        <button class="no-bg email-submit">&#10097;</button>
+                    </div>
+                    <small class="email-error">Invalid</small>
+                </div>
+            </div>
+        </main>
+        <hr>
+        <div class="credentials">
+            <div>&copy; <span class="year"></span> The Su Hotel Shanghai</div>
+            <div class="links">
+                <a href="">WeChat</a>
+                <a href="">Instagram</a>
+                <a href="">Little Red Book</a>
+            </div>
+        </div>
+    </section>
+
+    <script defer src="./scripts/explore.js"></script>
+    <script defer src="./scripts/footer.js"></script>
+    <script defer src="./scripts/header.js"></script>
+    <script defer src="./scripts/story.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "su-kitchen": {
+    "name": "SU Kitchen",
+    "groups": [
+      {
+        "name": "Small Plates",
+        "items": [
+          {
+            "name": "Smoked river fish, green plum",
+            "price": 128
+          },
+          {
+            "name": "Silken tofu, spring onion oil",
+            "price": 88
+          }
+        ]
+      },
+      {
+        "name": "From the Wok",
+        "items": [
+          {
+            "name": "Tea-smoked duck, seasonal greens",
+            "price": 268
+          },
+          {
+            "name": "Wild mushroom noodles",
+            "price": 168
+          }
+        ]
+      },
+      {
+        "name": "Sweet",
+        "items": [
+          {
+            "name": "Rice wine pear, osmanthus",
+            "price": 78
+          },
+          {
+            "name": "Dark chocolate, sesame",
+            "price": 88
+          }
+        ]
+      }
+    ]
+  },
+  "river-bar": {
+    "name": "River Bar",
+    "groups": [
+      {
+        "name": "Shanghai Signatures",
+        "items": [
+          {
+            "name": "Creek at Dusk",
+            "price": 128
+          },
+          {
+            "name": "Brass Lantern",
+            "price": 138
+          }
+        ]
+      },
+      {
+        "name": "Zero Proof",
+        "items": [
+          {
+            "name": "Plum and Shiso Highball",
+            "price": 88
+          },
+          {
+            "name": "Jasmine Tonic",
+            "price": 78
+          }
+        ]
+      },
+      {
+        "name": "Bar Plates",
+        "items": [
+          {
+            "name": "Five-spice cashews",
+            "price": 58
+          },
+          {
+            "name": "Crisp wonton, smoked chilli",
+            "price": 78
+          }
+        ]
+      }
+    ]
+  }
+}

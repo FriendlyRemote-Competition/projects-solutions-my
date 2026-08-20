@@ -1,0 +1,66 @@
+[
+  {
+    "id": "deluxe-river",
+    "name": "Deluxe River Room",
+    "size": "42 m²",
+    "guests": 2,
+    "bed": "1 king bed",
+    "price": 2380,
+    "image": "images/room-deluxe-river.webp",
+    "description": "A calm river-facing room shaped by warm timber, cream linen and morning light.",
+    "amenities": [
+      "Suzhou Creek view",
+      "Window daybed",
+      "Rain shower",
+      "Complimentary minibar"
+    ]
+  },
+  {
+    "id": "art-deco-king",
+    "name": "Art Deco King Room",
+    "size": "46 m²",
+    "guests": 2,
+    "bed": "1 king bed",
+    "price": 2680,
+    "image": "images/room-art-deco-king.webp",
+    "description": "Geometric detailing and rich, muted colour reinterpret Shanghai glamour for a modern stay.",
+    "amenities": [
+      "Art Deco lounge area",
+      "Nespresso machine",
+      "Walk-in rain shower",
+      "Evening turndown"
+    ]
+  },
+  {
+    "id": "suzhou-suite",
+    "name": "Suzhou Suite",
+    "size": "68 m²",
+    "guests": 3,
+    "bed": "1 king bed",
+    "price": 3680,
+    "image": "images/room-suzhou-suite.webp",
+    "description": "A residential suite with separate living space and wide views over the moving river.",
+    "amenities": [
+      "Separate living room",
+      "Panoramic river view",
+      "Deep soaking bath",
+      "Personal host service"
+    ]
+  },
+  {
+    "id": "bund-signature",
+    "name": "Bund Signature Suite",
+    "size": "92 m²",
+    "guests": 4,
+    "bed": "1 king bed",
+    "price": 5280,
+    "image": "images/room-bund-signature.webp",
+    "description": "Our generous corner suite frames Shanghai after dark with cinematic views and quiet privacy.",
+    "amenities": [
+      "Corner skyline view",
+      "Dining table for four",
+      "Private bar",
+      "Return airport transfer"
+    ]
+  }
+]

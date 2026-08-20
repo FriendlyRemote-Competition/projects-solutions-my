@@ -1,0 +1,29 @@
+[
+  {
+    "id": "bund",
+    "name": "The Bund",
+    "travelMode": "By car",
+    "duration": "12 min",
+    "description": "Historic waterfront architecture and expansive Huangpu River views.",
+    "image": "images/nearby-bund.webp",
+    "markerId": "marker-bund"
+  },
+  {
+    "id": "suzhou-creek",
+    "name": "Suzhou Creek Walk",
+    "travelMode": "On foot",
+    "duration": "4 min",
+    "description": "A relaxed riverside route connecting restored warehouses and new public spaces.",
+    "image": "images/nearby-suzhou-creek.webp",
+    "markerId": "marker-suzhou-creek"
+  },
+  {
+    "id": "m50",
+    "name": "M50 Art District",
+    "travelMode": "By car",
+    "duration": "9 min",
+    "description": "Independent galleries and studios in a converted industrial neighbourhood.",
+    "image": "images/nearby-m50.webp",
+    "markerId": "marker-m50"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "su-kitchen": {
+    "name": "SU Kitchen",
+    "eyebrow": "Modern Shanghai table",
+    "description": "Seasonal produce, familiar flavours and a clear contemporary point of view.",
+    "hours": "Breakfast 06:30\u201310:30 \u00b7 Dinner 17:30\u201322:00"
+  },
+  "river-bar": {
+    "name": "River Bar",
+    "eyebrow": "Drinks after dusk",
+    "description": "Quiet cocktails, river reflections and a soundtrack that settles into the evening.",
+    "hours": "Daily 16:00\u201301:00"
+  }
+}

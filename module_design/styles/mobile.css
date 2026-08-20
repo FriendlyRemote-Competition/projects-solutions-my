@@ -1,0 +1,84 @@
+@media (max-width: 860px){
+    header nav{
+        display: none;
+    }
+    header .header-actions{
+        display: none;
+    }
+    header .mobile-icon{
+        display: block;
+    }
+    section .header{
+        flex-direction: column;
+    }
+    .wellness main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer main{
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1024px){
+    section:not(.hero){
+        padding: 100px 30px;
+    }
+    .story main{
+        flex-direction: column;
+    }
+    .story main img{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1280px){
+    .explore main{
+        flex-direction: column;
+    }
+    .explore main img{
+        width: 100%;
+    }
+}
+@media (max-width: 400px){
+    .story .stats{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px){
+    .wellness main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 760px){
+    .rooms .card{
+        flex-direction: column;
+    }
+    .rooms .card img{
+        width: 100%;
+    }
+    .restaurants .cards{
+        flex-direction: column;
+    }
+    .wellness .heading img{
+        height: 400px;
+    }
+    .wellness .heading .content h1{
+        font-size: 32px;
+    }
+    .footer .credentials{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 960px){
+    .hero .overlay .content h1{
+        font-size: 48px;
+    }
+}

@@ -1,0 +1,7 @@
+The supplied fonts are distributed under the SIL Open Font License 1.1.
+
+- Cormorant Garamond SemiBold: CormorantGaramond-SemiBold.woff2
+- Inter Regular: Inter-Regular.woff2
+- Inter Medium: Inter-Medium.woff2
+
+See SIL-OFL-1.1.txt for licence information. The fonts may be embedded locally in the competition website.
